@@ -630,7 +630,7 @@ xepOnline.Formatter = {
 		var regx = /<svg ("[^"]*"|[^\/">])*>/ig;
 		var match = regx.exec(data);
 		var startIdx = 0;
-		var svgdec_text = 'xmlns="http://www.w3.org/2000/svg"';
+		var svgdec_text = 'xmlns="https://www.w3.org/2000/svg"';
 
 		while(match != null) {
 
@@ -658,12 +658,12 @@ xepOnline.Formatter = {
 
 		return builder += (data || '');
 	},
-	xep_chandra_service: 'http://xep.cloudformatter.com/Chandra.svc/genpackage',
-	xep_chandra_service_AS_PDF: 'http://xep.cloudformatter.com/Chandra.svc/genfile',
-	xep_chandra_service_page_images: 'http://xep.cloudformatter.com/Chandra.svc/genpageimages',
-	entity_declaration:'<!DOCTYPE div [  <!ENTITY % winansi SYSTEM "http://xep.cloudformatter.com/doc/XSL/winansi.xml">  %winansi;]>',
-	xsl_stylesheet_declaration: '<?xml-stylesheet type="text/xsl" href="http://xep.cloudformatter.com/doc/XSL/xeponline-fo-translate-2.xsl"?>',
-	svg_xsl_stylesheet_declaration: '<?xml-stylesheet type="text/xsl" href="http://xep.cloudformatter.com/doc/XSL/xeponline-svg-translate.xsl"?>',
+	xep_chandra_service: 'https://xep.cloudformatter.com/Chandra.svc/genpackage',
+	xep_chandra_service_AS_PDF: 'https://xep.cloudformatter.com/Chandra.svc/genfile',
+	xep_chandra_service_page_images: 'https://xep.cloudformatter.com/Chandra.svc/genpageimages',
+	entity_declaration:'<!DOCTYPE div [  <!ENTITY % winansi SYSTEM "https://xep.cloudformatter.com/doc/XSL/winansi.xml">  %winansi;]>',
+	xsl_stylesheet_declaration: '<?xml-stylesheet type="text/xsl" href="https://xep.cloudformatter.com/doc/XSL/xeponline-fo-translate-2.xsl"?>',
+	svg_xsl_stylesheet_declaration: '<?xml-stylesheet type="text/xsl" href="https://xep.cloudformatter.com/doc/XSL/xeponline-svg-translate.xsl"?>',
 	src_type: { xml: 'text/xml'},
 	mime_type: {
 	   pdf: 'application/pdf',
@@ -778,13 +778,13 @@ xepOnline.Formatter = {
 			jQuery(document).trigger( "xepOnlineStatus", ["Finished"]);
 // DO NOT USE. We are implementing SOAP-based server support also. It is functional but this server is an Azure server not active at this time.
 		} else if (options.render === 'soap') {
-		    var productServiceUrl = 'http://52.8.13.8:6577/fairy';
+		    var productServiceUrl = 'https://52.8.13.8:6577/fairy';
             var soapMessage =
-'<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" \
-    xmlns:fairy="http://52.8.13.8:6577/fairy"> \
+'<SOAP-ENV:Envelope xmlns:SOAP-ENV="https://schemas.xmlsoap.org/soap/envelope/" \
+    xmlns:fairy="https://52.8.13.8:6577/fairy"> \
     <SOAP-ENV:Header/> \
     <SOAP-ENV:Body> \
-        <fairy:format SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"> \
+        <fairy:format SOAP-ENV:encodingStyle="https://schemas.xmlsoap.org/soap/encoding/"> \
             <in0>'+ xepOnline.Formatter.getBase() + '</in0> \
             <in1>' + utf8ToBase64(xepOnline.Formatter.entity_declaration + current_stylesheet + printcopy) + '</in1> \
         </fairy:format> \
