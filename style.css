@@ -1,0 +1,156 @@
+
+h1, h2 {
+
+  font-family: "Open Sans", sans-serif;
+
+}
+
+h1 {
+  font-size: 3rem;
+
+}
+
+h2 {
+
+  font-size: 2rem;
+  display: inline-block;
+
+}
+
+p {
+
+  font-family: "Lato", sans-serif;
+  font-size: 1.3rem;
+}
+body {
+
+  background-color: rgba(250, 243, 221, 0.9);
+}
+
+table {
+
+  width: 100%;
+  letter-spacing: 1px;
+
+}
+
+tbody tr:nth-child(odd) {
+
+  background-color: #EAE3CD;
+}
+
+tr {
+
+  display: inline-table;
+  cursor: pointer;
+  width: 100%;
+  margin-right: auto;
+  margin-left: auto;
+
+}
+
+tr td:nth-child(1), tr th:nth-child(1) {
+
+  width: 30%;
+  font-weight: bold;
+
+}
+
+tr td:nth-child(1) {
+
+  font-size: 1.1rem;
+}
+
+th {
+
+  font-size: 1.2rem;
+  font-family: "Open Sans", sans-serif;
+}
+
+
+tr td:nth-child(1) {
+
+  font-family: "Open Sans", sans-serif;
+
+}
+
+tr td:nth-child(2) {
+
+  font-family: "Lato", sans-serif;
+}
+
+tr:hover {
+
+  background-color: #5E6472 !important;
+  opacity: 0.6;
+  filter: blur(0.04rem);
+  color: white;
+
+}
+
+tr.header:hover {
+
+  background-color: rgba(250, 243, 221, 0.9) !important;
+  color: initial;
+  filter: none;
+  opacity: 1;
+  cursor: initial;
+
+}
+
+td {
+
+  border: 1px solid black;
+  padding: .7rem;
+
+}
+
+.hide {
+
+  opacity: 0;
+
+}
+
+
+#overlay {
+
+  background-color: #5E6472;
+  opacity: 0.85;
+
+}
+
+#butMet, #butNotMet, #butClear {
+
+  background-color: #AED9E0;
+  color: black;
+  border-radius: 100%;
+  display: inline-block;
+  width: 20%;
+  height: 100%;
+  margin-left: 5%;
+  margin-right: 5%;
+  text-align: center;
+  cursor: pointer;
+  border: none;
+  font-size: 1.2rem;
+  font-family: "Open Sans", sans-serif;
+  font-weight: bold;
+}
+
+#printButAllTop, #printButAllBottom, #printButSection1, #printButSection2, #printButSection3, #printButSection4, #printButSection5 {
+  background-color: white;
+  color: black;
+  width: 15%;
+  font-family: "Open Sans", sans-serif;
+  font-size: 1.01rem;
+  margin:2%;
+}
+
+#printButAllTop:hover, #printButAllBottom:hover, #printButSection1:hover, #printButSection2:hover, #printButSection3:hover, #printButSection4:hover, #printButSection5:hover {
+
+  background-color: #5E6472;
+  color: white;
+  cursor: pointer;
+  transition: 0.3s;
+
+}
