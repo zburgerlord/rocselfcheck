@@ -31,15 +31,21 @@ function cleanz() {
     overlay.setAttribute("style", "display: none;");
 };
 
-function classy () {
+function classy ()
+{
 
     allDem = document.querySelectorAll("tr")
-    allDem.forEach(function(item) {
+    allDem.forEach(function(item)
+    {
+
         item.setAttribute("onclick", "menuTime(event)");
-        if (item.classList == "header") {
+        if (item.classList == "header")
+        {
             return;
         }
-        else {
+
+        else
+        {
             item.setAttribute("class", "content");
         }
 
@@ -48,6 +54,55 @@ function classy () {
 
 
 };
+
+
+function clearEveryRow ()
+{
+
+    allDem = document.querySelectorAll("tr")
+    allDem.forEach(function(item)
+    {
+
+        if (item.classList == "header")
+        {
+            return;
+        }
+
+        else
+        {
+            item.style.backgroundColor = "";
+        }
+
+    });
+
+
+
+};
+
+function clearSingleSection (element)
+{
+
+    var parent = element.parentNode;
+
+    var theRows = parent.querySelectorAll("tr");
+
+    theRows.forEach(function(item)
+    {
+
+        if (item.classList == "header")
+        {
+            return;
+        }
+        else
+        {
+            item.style.backgroundColor = "";
+
+        }
+    });
+
+
+};
+
 
 function menuTime(event) {
 

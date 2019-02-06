@@ -12,9 +12,11 @@
 <body>
 <h1>ROC self check</h1>
 <p>Click each criterion and choose met/not met. This focuses on the <em>design</em> components of a course; delivery criteria are not included.</p>
-<p>You can get a PDF of your self check for one section or the whole document by clicking on the appropriate button.</p>
+<p>You can get a PDF of your self check for one section or the whole document by clicking on the appropriate button. </p>
+<p>The PDF requires a pop-up window. If you have to allow pop-ups, the PDF might appear blank (i.e. without the row colors); close that pop-up and and hit the button again.</p>
 
 <button id="printButAllTop" onclick="return xepOnline.Formatter.Format('printDivAll');">Get All Sections PDF</button>
+<button id="clearAllRowsTop" onclick="clearEveryRow();">Clear All Sections</button>
 
 <div id="printDivAll">
 
@@ -22,6 +24,7 @@
 
 <h2>Section 1: Start Right</h2>
 <button id="printButSection1" onclick="return xepOnline.Formatter.Format('printDivSection1');">Get Section 1 PDF</button>
+<button id="clearSection1" onclick="clearSingleSection(this);">Clear Section 1</button>
 
 <p>In Section 1, the Design Criteria are used to review general course information, start right content, and the clear presence of online components.
    The Delivery Criteria describe actions to support the Design Criteria. In this section, information aligns with the <a href="https://valenciacollege.edu/faculty/development/teaching-learning-academy/candidate/tla-competencies-lcf.php" target="_blank">Essential Competencies</a> of
@@ -129,6 +132,7 @@
 <h2>Section 2: Accessibility and Usability</h2>
 
 <button id="printButSection2" onclick="return xepOnline.Formatter.Format('printDivSection2');">Get Section 2 PDF</button>
+<button id="clearSection2" onclick="clearSingleSection(this);">Clear Section 2</button>
 
 <p>In Section 2, the Design Criteria are used to review if the course is built to accommodate student needs, including ADA compliance. In this section, the information aligns with the <a href="https://valenciacollege.edu/faculty/development/teaching-learning-academy/candidate/tla-competencies-lcf.php" target="_blank">Essential Competencies</a> of
    <em>Inclusion and Diversity</em> and <em>Outcomes-based Practice</em>.
@@ -186,6 +190,7 @@
 <h2>Section 3: Learning Outcomes, Course Activites, and Instructional Materials</h2>
 
 <button id="printButSection3" onclick="return xepOnline.Formatter.Format('printDivSection3');">Get Section 3 PDF</button>
+<button id="clearSection3" onclick="clearSingleSection(this);">Clear Section 3</button>
 
 <p>In Section 3, the Design Criteria are used to review if the course includes the essentials of learning outcomes, course activities, and instructional materials.
    In this section, the information aligns with the <a href="https://valenciacollege.edu/faculty/development/teaching-learning-academy/candidate/tla-competencies-lcf.php" target="_blank">Essential Competencies</a> of
@@ -244,6 +249,7 @@
 <h2>Section 4: Course Technology and Course Support</h2>
 
 <button id="printButSection4" onclick="return xepOnline.Formatter.Format('printDivSection4');">Get Section 4 PDF</button>
+<button id="clearSection4" onclick="clearSingleSection(this);">Clear Section 4</button>
 
 <p>In Section 4, the Design Criteria are used to review if the course includes components of course technology and course support.
   The Delivery Criteria are used to review if the instructor actions support the clear presence of these online components.
@@ -288,6 +294,7 @@
 <h2>Section 5: Engaged Teaching</h2>
 
 <button id="printButSection5" onclick="return xepOnline.Formatter.Format('printDivSection5');">Get Section 5 PDF</button>
+<button id="clearSection5" onclick="clearSingleSection(this);">Clear Section 5</button>
 
 <p>In Section 5, the Design Criteria are used to review the instructor presence, facilitation, and course interactions.
   The Delivery Criteria are used to review if the instructor actions support the clear presence of these components.
@@ -348,6 +355,7 @@
 </div>
 
 <button id="printButAllBottom" onclick="return xepOnline.Formatter.Format('printDivAll');">Get All Sections PDF</button>
+<button id="clearAllRowsBottom" onclick="clearEveryRow();">Clear All Sections</button>
 
 <div id="overlay">
 </div>
