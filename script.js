@@ -196,7 +196,7 @@ function met() {
     overlay.setAttribute("style", "display:none;");
 
 
-    currentRow.style.backgroundColor = "#C6FF9E";
+    currentRow.style.backgroundColor = "#8DA7BE";
 
 
 };
@@ -216,7 +216,7 @@ function notMet() {
       overlay.setAttribute("style", "display:none;");
 
 
-    currentRow.style.backgroundColor = "#FFA69E";
+    currentRow.style.backgroundColor = "#F2E394";
 
 };
 
