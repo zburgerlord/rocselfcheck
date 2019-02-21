@@ -221,7 +221,7 @@ function met() {
     if (cellCheck[1].getAttribute("style") == cellCheck[3].getAttribute("style")) {
 
         cellCheck[5].style.backgroundColor = "";
-        currentRow.style.backgroundColor = "#8DA7BE";
+        cellCheck[5].style.backgroundColor = "#8DA7BE";
 
     }
 
