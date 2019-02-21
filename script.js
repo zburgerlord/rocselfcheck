@@ -244,7 +244,7 @@ function met() {
 
 function notMet() {
 
-// hide that shit (div and buttons) and adjust color
+// hide that shit (div and buttons) and adjust current cell color
 
       butMet.setAttribute("class", "hide");
       butNotMet.setAttribute("class", "hide");
@@ -261,9 +261,11 @@ function notMet() {
 
     cellCheck[5].style.backgroundColor = "";
 
+    //if they are the same style or different style, then color last cell as "not met"
+
     if (cellCheck[1].getAttribute("style") == cellCheck[3].getAttribute("style")) {
 
-        cellCheck[5].style.backgroundColor = "";
+
         cellCheck[5].style.backgroundColor = "#F2E394";
 
 
@@ -281,7 +283,7 @@ function notMet() {
 
 function clearRow() {
 
-// hide that shit (div and buttons) and adjust color
+// hide that shit (div and buttons) and adjust color or remove color if both criteria cells are cleared
 
       butMet.setAttribute("class", "hide");
       butNotMet.setAttribute("class", "hide");
@@ -303,7 +305,6 @@ function clearRow() {
         cellCheck[5].style.backgroundColor = "";
 
     }
-
 
 
 
