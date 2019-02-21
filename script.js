@@ -88,25 +88,18 @@ function clearEveryRow ()
 
 };
 
-function clearSingleSection (element)
+function clearSingleSection ()
 {
 
-    var parent = element.parentNode;
 
-    var theCells = parent.querySelectorAll("td");
+    var theCells = document.querySelectorAll("td");
 
     theCells.forEach(function(item)
     {
 
-        if (item.classList == "header")
-        {
-            return;
-        }
-        else
-        {
             item.style.backgroundColor = "";
 
-        }
+
     });
 
 
