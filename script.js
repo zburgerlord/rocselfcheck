@@ -1,5 +1,6 @@
 
 
+
 var overlay = document.getElementById("overlay");
 var butMet = document.getElementById("butMet");
 var butNotMet = document.getElementById("butNotMet");
@@ -47,6 +48,15 @@ function classy ()
         {
             item.setAttribute("class", "content");
         }
+
+    });
+
+    allCells = document.querySelectorAll("td");
+
+    allCells.forEach(function(item)
+    {
+
+      item.setAttribute("style", "");
 
     });
 
@@ -115,7 +125,7 @@ function menuTime(event) {
 
     currentRow = document.elementFromPoint(x, y).parentElement;
     currentCell = document.elementFromPoint(x, y);
-
+    cellCheck = currentRow.childNodes;
 
     if (currentRow.classList != "content") {
       return;
@@ -142,8 +152,8 @@ function menuTime(event) {
 
 
 
-console.log("ROW - top: " + currentTop + " left: " + currentLeft + " width: " + currentWidth);
-console.log("CELL - top: " + currentCellTop + " left: " + currentCellLeft + " width: " + currentCellWidth);
+//console.log("ROW - top: " + currentTop + " left: " + currentLeft + " width: " + currentWidth);
+//console.log("CELL - top: " + currentCellTop + " left: " + currentCellLeft + " width: " + currentCellWidth);
 
 //clear style and position div with buttons in table row
 
@@ -210,6 +220,26 @@ function met() {
     currentCell.style.backgroundColor = "#8DA7BE";
 
 
+// check to see if both cells are the same color and then color the row instead
+
+
+    currentRow.style.backgroundColor = "";
+
+    if (cellCheck[1].getAttribute("style") == cellCheck[3].getAttribute("style")) {
+
+        cellCheck[5].style.backgroundColor = "";
+        currentRow.style.backgroundColor = "#8DA7BE";
+
+    }
+
+    if (cellCheck[1].getAttribute("style") !== cellCheck[3].getAttribute("style")) {
+
+        cellCheck[5].style.backgroundColor = "#F2E394";
+
+    }
+
+
+
 };
 
 function notMet() {
@@ -228,6 +258,23 @@ function notMet() {
 
 
     currentCell.style.backgroundColor = "#F2E394";
+
+    cellCheck[5].style.backgroundColor = "";
+
+    if (cellCheck[1].getAttribute("style") == cellCheck[3].getAttribute("style")) {
+
+        cellCheck[5].style.backgroundColor = "";
+        cellCheck[5].style.backgroundColor = "#F2E394";
+
+
+    }
+
+    if (cellCheck[1].getAttribute("style") !== cellCheck[3].getAttribute("style")) {
+
+        cellCheck[5].style.backgroundColor = "#F2E394";
+
+    }
+
 
 };
 
@@ -249,4 +296,25 @@ function clearRow() {
 
     currentCell.style.backgroundColor = "";
 
+
+
+    if (cellCheck[1].matches('[style=""]') && cellCheck[3].matches('[style=""]')) {
+
+        cellCheck[5].style.backgroundColor = "";
+
+    }
+
+
+
+
+
 };
+
+document.onload = function() {
+
+    cellCheck[1].style.backgroundColor = "";
+    cellCheck[3].style.backgroundColor = "";
+    cellCheck[5].style.backgroundColor = "";
+
+
+}
