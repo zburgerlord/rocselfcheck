@@ -1,6 +1,5 @@
 
 
-
 var overlay = document.getElementById("overlay");
 var butMet = document.getElementById("butMet");
 var butNotMet = document.getElementById("butNotMet");
@@ -59,7 +58,7 @@ function classy ()
 function clearEveryRow ()
 {
 
-    allDem = document.querySelectorAll("tr")
+    allDem = document.querySelectorAll("td")
     allDem.forEach(function(item)
     {
 
@@ -84,9 +83,9 @@ function clearSingleSection (element)
 
     var parent = element.parentNode;
 
-    var theRows = parent.querySelectorAll("tr");
+    var theCells = parent.querySelectorAll("td");
 
-    theRows.forEach(function(item)
+    theCells.forEach(function(item)
     {
 
         if (item.classList == "header")
@@ -115,24 +114,36 @@ function menuTime(event) {
     var y = event.clientY;
 
     currentRow = document.elementFromPoint(x, y).parentElement;
+    currentCell = document.elementFromPoint(x, y);
+
 
     if (currentRow.classList != "content") {
       return;
     }
 
+    if (currentCell.cellIndex == 2) {
+      return;
+    }
+
     else {
 
-    console.log(currentRow);
+  //  console.log(currentRow);
+  //  console.log(currentCell);
 
-    currentTop = currentRow.getBoundingClientRect().top;
-    currentTop1 = currentRow.offsetTop;
-    currentLeft = currentRow.getBoundingClientRect().left;
-    currentHeight = currentRow.offsetHeight;
-    currentWidth = currentRow.offsetWidth;
+    var currentTop = currentRow.getBoundingClientRect().top;
+    var currentTop1 = currentRow.offsetTop;
+    var currentLeft = currentRow.getBoundingClientRect().left;
+    var currentHeight = currentRow.offsetHeight;
+    var currentWidth = currentRow.offsetWidth;
+    var currentCellTop = currentCell.getBoundingClientRect().top;
+    var currentCellLeft = currentCell.getBoundingClientRect().left;
+    var currentCellWidth = currentCell.offsetWidth;
+    var currentCellHeight = currentCell.offsetHeight;
 
 
 
-console.log("top: " + currentTop + " left: " + currentLeft + " width: " + currentWidth);
+console.log("ROW - top: " + currentTop + " left: " + currentLeft + " width: " + currentWidth);
+console.log("CELL - top: " + currentCellTop + " left: " + currentCellLeft + " width: " + currentCellWidth);
 
 //clear style and position div with buttons in table row
 
@@ -143,29 +154,29 @@ console.log("top: " + currentTop + " left: " + currentLeft + " width: " + curren
 
 
 overlay.setAttribute("style", "position: fixed; top: "
-    + currentTop + "px" +
-    "; left: " + currentLeft + "px" +
-    "; width: " + currentWidth + "px" +
-    "; height: " + currentHeight + "px" +
-    "; max-height: " + currentHeight + "px" +
-    "; max-width: " + currentWidth + "px" + ";");
+    + currentCellTop + "px" +
+    "; left: " + currentCellLeft + "px" +
+    "; width: " + currentCellWidth + "px" +
+    "; height: " + currentCellHeight + "px" +
+    "; max-height: " + currentCellHeight + "px" +
+    "; max-width: " + currentCellWidth + "px" + ";");
 
 butMet.setAttribute("style", "position: fixed; top: "
-    + currentTop + "px" +
-    "; left: " + (currentLeft + (currentWidth * 0.05)) + "px" +
-    "; max-height: " + currentHeight + "px" +
-    "; max-width: " + currentWidth + "px" + ";");
+    + (currentCellTop + (currentCellHeight * 0.10)) + "px" +
+    "; left: " + (currentCellLeft + (currentCellWidth * 0.13)) + "px" +
+    "; max-height: " + currentCellHeight + "px" +
+    "; max-width: " + currentCellWidth + "px" + ";");
 
 butNotMet.setAttribute("style", "position: fixed; top: "
-    + currentTop + "px" +
-    "; left: " + (currentLeft + (currentWidth * 0.35)) + "px" +
+    + (currentCellTop + (currentCellHeight * 0.40)) + "px" +
+    "; left: " + (currentCellLeft + (currentCellWidth * 0.13)) + "px" +
     "; max-height: " + currentHeight + "px" +
     "; max-width: " + currentWidth + "px" + ";");
 
 
 butClear.setAttribute("style", "position: fixed; top: "
-    + currentTop + "px" +
-    "; left: " + (currentLeft + (currentWidth * 0.65)) + "px" +
+    + (currentCellTop + (currentCellHeight * 0.70)) + "px" +
+    "; left: " + (currentCellLeft + (currentCellWidth * 0.13)) + "px" +
     "; max-height: " + currentHeight + "px" +
     "; max-width: " + currentWidth + "px" + ";");
 
@@ -196,7 +207,7 @@ function met() {
     overlay.setAttribute("style", "display:none;");
 
 
-    currentRow.style.backgroundColor = "#8DA7BE";
+    currentCell.style.backgroundColor = "#8DA7BE";
 
 
 };
@@ -216,7 +227,7 @@ function notMet() {
       overlay.setAttribute("style", "display:none;");
 
 
-    currentRow.style.backgroundColor = "#F2E394";
+    currentCell.style.backgroundColor = "#F2E394";
 
 };
 
@@ -236,6 +247,6 @@ function clearRow() {
       overlay.setAttribute("style", "display:none;");
 
 
-    currentRow.style.backgroundColor = "";
+    currentCell.style.backgroundColor = "";
 
 };
