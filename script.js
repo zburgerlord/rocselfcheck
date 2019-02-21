@@ -92,7 +92,7 @@ function clearSingleSection ()
 {
 
 
-    var theCells = document.querySelectorAll("td");
+    theCells = document.querySelectorAll("td");
 
     theCells.forEach(function(item)
     {
