@@ -212,15 +212,18 @@ function met() {
 
     currentCell.style.backgroundColor = "#8DA7BE";
 
+    cellCheck[5].style.backgroundColor = "";
 
-// check to see if both cells are the same color and then color the row instead
+
+// check to see if both cells are the same color and then color the annotations cell also the same color;
+// otherwise leave annotation cell as "not met" color
 
 
-    currentRow.style.backgroundColor = "";
+
 
     if (cellCheck[1].getAttribute("style") == cellCheck[3].getAttribute("style")) {
 
-        cellCheck[5].style.backgroundColor = "";
+
         cellCheck[5].style.backgroundColor = "#8DA7BE";
 
     }
