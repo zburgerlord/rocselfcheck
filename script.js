@@ -260,13 +260,6 @@ function clearRow() {
 
 
 
-    if (cellCheck[1].matches('[style=""]') && cellCheck[3].matches('[style=""]')) {
-
-        cellCheck[5].style.backgroundColor = "";
-
-    }
-
-
 
 
 };
