@@ -1,16 +1,16 @@
 
 
 
-var overlay = document.getElementById("overlay");
-var butMet = document.getElementById("butMet");
-var butNotMet = document.getElementById("butNotMet");
-var butClear = document.getElementById("butClear");
+let overlay = document.getElementById("overlay");
+let butMet = document.getElementById("butMet");
+let butNotMet = document.getElementById("butNotMet");
+let butClear = document.getElementById("butClear");
 
-var currentRow;
-var currentTop;
-var currentLeft;
-var currentHeight;
-var currentWidth;
+let currentRow;
+let currentTop;
+let currentLeft;
+let currentHeight;
+let currentWidth;
 
 window.addEventListener("resize", cleanz);
 window.addEventListener("wheel", cleanz);
@@ -211,28 +211,8 @@ function met() {
 
 
     currentCell.style.backgroundColor = "#8DA7BE";
-
-    cellCheck[5].style.backgroundColor = "";
-
-
-// check to see if both cells are the same color and then color the annotations cell also the same color;
-// otherwise leave annotation cell as "not met" color
-
-
-
-
-    if (cellCheck[1].getAttribute("style") == cellCheck[3].getAttribute("style")) {
-
-
-        cellCheck[5].style.backgroundColor = "#8DA7BE";
-
-    }
-
-    if (cellCheck[1].getAttribute("style") !== cellCheck[3].getAttribute("style")) {
-
-        cellCheck[5].style.backgroundColor = "#F2E394";
-
-    }
+    
+    cellCheck[3].style.backgroundColor = "#8DA7BE";
 
 
 
@@ -254,25 +234,9 @@ function notMet() {
 
 
     currentCell.style.backgroundColor = "#F2E394";
-
-    cellCheck[5].style.backgroundColor = "";
-
-    //if they are the same style or different style, then color last cell as "not met"
-
-    if (cellCheck[1].getAttribute("style") == cellCheck[3].getAttribute("style")) {
-
-
-        cellCheck[5].style.backgroundColor = "#F2E394";
-
-
-    }
-
-    if (cellCheck[1].getAttribute("style") !== cellCheck[3].getAttribute("style")) {
-
-        cellCheck[5].style.backgroundColor = "#F2E394";
-
-    }
-
+    
+    cellCheck[3].style.backgroundColor = "#F2E394";
+    
 
 };
 
@@ -311,7 +275,7 @@ document.onload = function() {
 
     cellCheck[1].style.backgroundColor = "";
     cellCheck[3].style.backgroundColor = "";
-    cellCheck[5].style.backgroundColor = "";
+   
 
 
 }
