@@ -124,7 +124,7 @@ function menuTime(event) {
       return;
     }
 
-    if (currentCell.cellIndex == 2) {
+    if (currentCell.cellIndex == 1) {
       return;
     }
 
